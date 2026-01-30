@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abby & Tyler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#registry">Registry</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-card">
+                <h1>Abby & Tyler</h1>
+                <div class="hero-divider"></div>
+                <div class="hero-date">August 8, 2026</div>
+                <div class="hero-location">Olympic National Park, Washington</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <div class="schedule-container">
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-header" onclick="toggleSchedule(this)">
+                        <div class="schedule-header-content">
+                            <h3>Welcome Dinner</h3>
+                            <div class="time"><p>Field Arts & Events Hall<br>Friday, August 7 · 5:00 PM</p></div>
+                        </div>
+                        <div class="schedule-toggle">+</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-details-content">
+                            <div class="schedule-details-text">
+                                <p>Join us for a plated dinner as a welcome to the weekend. We're planning on a semi-formal night with toasts and oysters(!)!</p>
+                                <p><strong>Attire:</strong> Semi-Formal</p>
+                                <p><strong>Location:</strong> 201 W Front St, Port Angeles, WA 98362</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-header" onclick="toggleSchedule(this)">
+                        <div class="schedule-header-content">
+                            <h3>Ceremony</h3>
+                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · TBD</p></div>
+                        </div>
+                        <div class="schedule-toggle">+</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-details-content">
+                            <div class="schedule-details-text">
+                                <p>Morning ceremony at the lake!</p>
+                                <p><strong>Attire:</strong> Cocktail / Garden Party / Color Palette SOON</p>
+                                <p><strong>Location:</strong>  (Address on Invitation)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-header" onclick="toggleSchedule(this)">
+                        <div class="schedule-header-content">
+                            <h3>Reception</h3>
+                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · TBD</p></div>
+                        </div>
+                        <div class="schedule-toggle">+</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-details-content">
+                            <div class="schedule-details-text">
+                                <p>After the ceremony we're planning some sort of cocktail hour followed by a good ol' fashioned lake day. Grilling, spilling, and chilling.<br>
+                                We're looking for suggestions for large group activities. We're thinking a mini ski-to-sea from the driveway to the lake :-)</p>
+                                <p><strong>Location:</strong>  (Address on Invitation)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-header" onclick="toggleSchedule(this)">
+                        <div class="schedule-header-content">
+                            <h3>Hike???</h3>
+                            <div class="time"><p>TBD<br>Sunday, August 9 · TBD</p></div>
+                        </div>
+                        <div class="schedule-toggle">+</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-details-content">
+                            <div class="schedule-details-text">
+                                <p>Not really sure what we want to do here, but if folks are still around it would be fun to get a group out on a casual hike!</p>
+                                <p><strong>Attire:</strong> Hiking gear</p>
+                                <p><strong>Location:</strong> TBD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-photo">
+                <img src="imgs/dock-shot.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-row">
+            <div class="gallery-column">
+                <img src="imgs/IMG_0453.jpg">
+                <img src="imgs/IMG_2918.jpg">
+            </div>
+            <div class="gallery-column">
+                <img src="imgs/IMG_0610.jpg">
+            </div>
+            <div class="gallery-column">
+                <img src="imgs/IMG_0617.jpg">
+            </div>
+            <div class="gallery-column">
+                <img src="imgs/IMG_2030.JPG">
+                <img src="imgs/IMG_8079.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>Location & Travel</h2>
+        <div class="location-subsection">
+            <h3>Accommodations</h3>
+            <div class="accommodation-grid">
+                <div class="accommodation-card">
+                    <h4>Lake Crescent Lodge</h4>
+                    <p>Historic lodge on the lake!</p>
+                    <p><strong>Address:</strong> Whoops<br>
+                        <strong>Phone:</strong> Whoops</p>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Log Cabin Resort</h4>
+                    <p>Cabins and camping!</p>
+                    <p><strong>Address:</strong> Whoops<br>
+                        <strong>Phone:</strong> Whoops</p>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Red Lion Hotel</h4>
+                    <p>Hotel in Port Angeles.</p>
+                    <p><strong>Address:</strong> Whoops<br>
+                        <strong>Phone:</strong> Whoops</p>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Vacation Rentals</h4>
+                    <p>Airbnb and VRBO or w/e</p>
+                    <p><strong>Search Area:</strong> Port Angeles, WA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-subsection">
+            <h3>Dining & Shopping</h3>
+            <div class="accommodation-grid">
+                <div class="recommendation-card">
+                    <h4>Restaurants</h4>
+                    <ul class="recommendation-list">
+                        <li>New Day Eatery (Our caterer!)</li>
+                        <li>Barhop Brewing</li>
+                        <li>Lake Crescent Lodge Dining Room</li>
+                        <li>Bella Italia (never been, but c'mon)</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Local Shops</h4>
+                    <ul class="recommendation-list">
+                        <li>Joyce General Store</li>
+                        <li>Swain's General Store (Yeah, it's a hardware store, but it's a staple!)</li>
+                        <li>Port Book and News</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-subsection">
+            <h3>Area Activities</h3>
+            <div class="accommodation-grid">
+                <div class="recommendation-card">
+                    <h4>Hiking Trails</h4>
+                    <ul class="recommendation-list">
+                        <li>Marymere Falls Trail</li>
+                        <li>Hurricane Ridge</li>
+                        <li>Spruce Railroad Trail</li>
+                        <li>Cape Alava</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Points of Interest</h4>
+                    <ul class="recommendation-list">
+                        <li>Crescent Beach</li>
+                        <li>Elwha River Valley</li>
+                        <li>Port Angeles Waterfront</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registry">
+        <h2>Registry</h2>
+        <div class="registry-grid">
+            <div class="registry-card">
+                <h3>Imagine this is a Store</h3>
+                <a href="" target="_blank">Imagine a Link</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>:)</p>
+        <p>Abby & Tyler · August 8, 2026</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        function toggleSchedule(header) {
+            const item = header.parentElement;
+            const isCurrentlyExpanded = item.classList.contains('expanded');
+            
+            // Close all items instantly
+            const allItems = document.querySelectorAll('.schedule-item');
+            
+            // Force a reflow to ensure the transition: none takes effect
+            void item.offsetHeight;
+            
+            // Re-enable transitions
+            allItems.forEach(otherItem => {
+                otherItem.style.transition = '';
+            });
+            
+            // If we're opening this item (not just closing it), expand it
+            if (!isCurrentlyExpanded) {
+                // Use setTimeout to ensure the closing completes first
+                setTimeout(() => {
+                    item.classList.add('expanded');
+                }, 10);
+            }
+            else {
+                item.classList.remove('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

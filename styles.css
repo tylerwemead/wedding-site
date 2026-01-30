@@ -1,0 +1,459 @@
+@import url("https://use.typekit.net/wyv1niw.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #BF4E30;
+    --sage: #C6CCB2;
+    --deep-green: #093824;
+    --light-blue: #E5EAFA;
+    --mint: #78FECF;
+    --cream: #fffbe9;
+    --white: #fff;
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    --type-swear: 'swear-display', sans-serif;
+    --type-dm-mono: 'DM Mono', sans-serif;
+}
+
+h2 {
+    font-size: 3.16em;
+    font-family: var(--type-swear);
+}
+
+h3 {
+    font-size: 2.37em;
+    font-family: var(--type-swear);
+}
+
+body {
+    font-family: var(--type-dm-mono);
+    background: var(--cream);
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 3rem;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+nav a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    background: var(--sage);
+    background-image: url(imgs/hero.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 500px;
+    text-align: center;
+}
+
+.hero-card {
+    background: #fff;
+    padding: 10rem 3rem;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 8px #fff, inset 0 0 0 11px #000;
+}
+
+.hero h1 {
+    font-size: 3.1rem;
+    font-weight: 300;
+    font-family: var(--type-swear);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+}
+
+.hero-date {
+    font-size: 1rem;
+    color: var(--deep-green);
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.hero-location {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.hero-divider {
+    width: 33%;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem auto;
+}
+
+/* Section Styles */
+section {
+    padding: 6rem 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-weight: 400;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
+/* Schedule Section */
+
+
+.schedule-container {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.schedule-photo {
+    background: #e8e8e8;
+    aspect-ratio: 3/4;
+    top: 100px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.schedule-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.schedule-grid {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.schedule-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.schedule-header {
+    padding: 2rem 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    transition: opacity 0.2s ease;
+}
+
+.schedule-header:hover, .schedule-header:hover .time {
+    color: var(--orange)
+}
+
+.schedule-header h3 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.schedule-header .time {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.schedule-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.25rem;
+    color: var(--orange);
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+.schedule-item.expanded .schedule-toggle {
+    transform: rotate(45deg);
+}
+
+.schedule-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.schedule-item.expanded .schedule-details {
+    max-height: 800px;
+}
+
+.schedule-details-content {
+    padding: 0 0 2rem 0;
+}
+
+.schedule-details-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #666;
+    max-width: 700px;
+}
+
+.schedule-details-text p {
+    margin-bottom: 1rem;
+}
+
+.schedule-details-text strong {
+    font-weight: 500;
+    color: var(--orange);
+}
+
+/* Gallery Section */
+
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.gallery-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.gallery-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.gallery-item:hover {
+    opacity: 0.7;
+}
+
+/* Location Section */
+
+.location-subsection {
+    margin-bottom: 5rem;
+}
+
+.location-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.location-subsection h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+}
+
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+}
+
+.accommodation-card,
+.recommendation-card {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accommodation-card h4,
+.recommendation-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.accommodation-card p,
+.recommendation-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-list {
+    list-style: none;
+}
+
+.recommendation-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.recommendation-list li:last-child {
+    border-bottom: none;
+}
+
+/* Registry Section */
+#registry {
+    background: var(--deep-green);
+    border-radius: 25px;
+    margin-bottom: 50px;
+    color: var(--cream);
+}
+
+.registry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.registry-card {
+    background: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius-lg);
+    box-shadow: 5px 5px #0008;
+}
+
+.registry-card:hover {
+    transform: translateY(-4px);
+}
+
+.registry-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    color: var(--deep-green)
+}
+
+.registry-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.registry-card a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--deep-green);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.875rem;
+    transition: opacity 0.2s ease;
+    border-radius: var(--radius-sm);
+}
+
+.registry-card a:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background: var(--deep-green);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    font-size: 0.875rem;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-card {
+        padding: 8rem 2rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    .schedule-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .schedule-photo {
+        display: none;
+    }
+
+    .schedule-details-content,
+    .accommodation-grid,
+    .registry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
