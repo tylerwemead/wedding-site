@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abby & Tyler</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
@@ -36,7 +35,7 @@
                     <div class="schedule-header" onclick="toggleSchedule(this)">
                         <div class="schedule-header-content">
                             <h3>Welcome Dinner</h3>
-                            <div class="time"><p>Field Arts & Events Hall<br>Friday, August 7 · 5:00 PM</p></div>
+                            <div class="time"><p>Field Arts & Events Hall<br>Friday, August 7 · 5:30 PM</p></div>
                         </div>
                         <div class="schedule-toggle">+</div>
                     </div>
@@ -55,7 +54,7 @@
                     <div class="schedule-header" onclick="toggleSchedule(this)">
                         <div class="schedule-header-content">
                             <h3>Ceremony</h3>
-                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · TBD</p></div>
+                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · 11:00 AM</p></div>
                         </div>
                         <div class="schedule-toggle">+</div>
                     </div>
@@ -74,15 +73,15 @@
                     <div class="schedule-header" onclick="toggleSchedule(this)">
                         <div class="schedule-header-content">
                             <h3>Reception</h3>
-                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · TBD</p></div>
+                            <div class="time"><p>Lake Crescent<br>Saturday, August 8 · 11:30 AM to Late</p></div>
                         </div>
                         <div class="schedule-toggle">+</div>
                     </div>
                     <div class="schedule-details">
                         <div class="schedule-details-content">
                             <div class="schedule-details-text">
-                                <p>After the ceremony we're planning some sort of cocktail hour followed by a good ol' fashioned lake day. Grilling, spilling, and chilling.<br>
-                                We're looking for suggestions for large group activities. We're thinking a mini ski-to-sea from the driveway to the lake :-)</p>
+                                <p>After the ceremony we're planning some sort of cocktail hour followed by a good ol' fashioned lake day. Grilling, spilling, and chilling. 
+                                    We're looking for suggestions for large group activities. We're thinking a mini ski-to-sea from the driveway to the lake :-)</p>
                                 <p><strong>Location:</strong>  (Address on Invitation)</p>
                             </div>
                         </div>
@@ -92,17 +91,18 @@
                 <div class="schedule-item">
                     <div class="schedule-header" onclick="toggleSchedule(this)">
                         <div class="schedule-header-content">
-                            <h3>Hike???</h3>
-                            <div class="time"><p>TBD<br>Sunday, August 9 · TBD</p></div>
+                            <h3>Send Off Hike</h3>
+                            <div class="time"><p>Storm King<br>Sunday, August 9 · TBD</p></div>
                         </div>
                         <div class="schedule-toggle">+</div>
                     </div>
                     <div class="schedule-details">
                         <div class="schedule-details-content">
                             <div class="schedule-details-text">
-                                <p>Not really sure what we want to do here, but if folks are still around it would be fun to get a group out on a casual hike!</p>
+                                <p>Sunday we're finally going to do it. We can't believe it either, but we're finally hiking Storm King. This trail has a lot of elevation with 
+                                a great viewpoint payoff at the top. There's a ropes section past the end of the maintained trail to get to the viewpoint.</p>
                                 <p><strong>Attire:</strong> Hiking gear</p>
-                                <p><strong>Location:</strong> TBD</p>
+                                <p><strong>Location:</strong><a href="https://www.wta.org/go-hiking/hikes/mount-storm-king">Storm King Trailhead</a></p>
                             </div>
                         </div>
                     </div>
@@ -122,12 +122,13 @@
                 <img src="imgs/col-1/lovely-life.JPG">
                 <img src="imgs/col-1/dock-2.JPG">
                 <img src="imgs/col-1/teevs.jpg">
+                <img src="imgs/col-2/s2s-3.jpg">
             </div>
             <div class="gallery-column">
+                <img src="imgs/col-2/mum-and-us.JPEG">
                 <img src="imgs/col-2/bdgg.jpg">
                 <img src="imgs/col-2/lake.jpg">
                 <img src="imgs/col-2/engagement.JPG">
-                <img src="imgs/col-2/s2s-3">
             </div>
             <div class="gallery-column">
                 <img src="imgs/col-3/lake-talk.JPG">
@@ -226,6 +227,7 @@
         <h2>Registry</h2>
         <div class="registry-grid">
             <div class="registry-card">
+                <img src="imgs/registry/williams-sonoma.png" alt="Williams Sonoma">
                 <h3>Williams Sonoma</h3>
                 <a href="https://www.williams-sonoma.com/registry/kv8ssvbfpj/registry-list.html">Show me the money</a>
             </div>
@@ -236,6 +238,10 @@
         <p>:)</p>
         <p>Abby & Tyler · August 8, 2026</p>
     </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img alt="">
+    </div>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -277,6 +283,30 @@
                 item.classList.remove('expanded');
             }
         }
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+
+        document.querySelectorAll('.gallery-column img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('open');
+                document.body.classList.add('lightbox-open');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        lightbox.addEventListener('click', closeLightbox);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
     </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 @import url("https://use.typekit.net/wyv1niw.css");
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 * {
     margin: 0;
@@ -11,16 +11,12 @@
     --orange: #BF4E30;
     --sage: #C6CCB2;
     --deep-green: #093824;
-    --light-blue: #E5EAFA;
-    --mint: #78FECF;
     --cream: #fffbe9;
     --white: #fff;
-    
+
     --radius-sm: 4px;
-    --radius-md: 8px;
     --radius-lg: 12px;
-    --radius-xl: 16px;
-    
+
     --type-swear: 'swear-display', sans-serif;
     --type-dm-mono: 'DM Mono', sans-serif;
 }
@@ -142,14 +138,6 @@ section h2 {
     letter-spacing: -0.02em;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: #666;
-    font-size: 0.875rem;
-    margin-top: -2rem;
-    margin-bottom: 3rem;
-}
-
 /* Schedule Section */
 
 
@@ -163,7 +151,6 @@ section h2 {
 .schedule-photo {
     background: #e8e8e8;
     aspect-ratio: 3/4;
-    top: 100px;
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
@@ -276,10 +263,12 @@ section h2 {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+    cursor: zoom-in;
+    transition: opacity 0.2s ease;
 }
 
-.gallery-item:hover {
-    opacity: 0.7;
+.gallery-column img:hover {
+    opacity: 0.85;
 }
 
 /* Location Section */
@@ -370,6 +359,12 @@ section h2 {
     transform: translateY(-4px);
 }
 
+.registry-card img {
+    max-width: 140px;
+    height: auto;
+    margin-bottom: 1.25rem;
+}
+
 .registry-card h3 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -414,6 +409,33 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
     nav ul {
@@ -446,7 +468,6 @@ footer p {
         display: none;
     }
 
-    .schedule-details-content,
     .accommodation-grid,
     .registry-grid {
         grid-template-columns: 1fr;
