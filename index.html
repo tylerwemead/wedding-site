@@ -12,6 +12,7 @@
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#location">Location</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
             <li><a href="#registry">Registry</a></li>
         </ul>
     </nav>
@@ -20,7 +21,7 @@
         <div class="hero-content">
             <div class="hero-card">
                 <h1>Abby & Tyler</h1>
-                <div class="hero-divider"></div>
+                <div class="hero-divider">&#9829;</div>
                 <div class="hero-date">August 8, 2026</div>
                 <div class="hero-location">Olympic National Park, Washington</div>
             </div>
@@ -223,6 +224,14 @@
         </div>
     </section>
 
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <div class="rsvp-card" id="rsvp-form-wrap" hidden>
+            <iframe id="rsvp-iframe" loading="lazy" width="100%" height="1684" frameborder="0" marginheight="0" marginwidth="0" title="RSVP"></iframe>
+        </div>
+        <button class="rsvp-button" id="rsvp-toggle">Open RSVP Form</button>
+    </section>
+
     <section id="registry">
         <h2>Registry</h2>
         <div class="registry-grid">
@@ -305,6 +314,45 @@
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape' && lightbox.classList.contains('open')) {
                 closeLightbox();
+            }
+        });
+
+        const rsvpToggle = document.getElementById('rsvp-toggle');
+        const rsvpFormWrap = document.getElementById('rsvp-form-wrap');
+        const rsvpIframe = document.getElementById('rsvp-iframe');
+
+        const navLinks = document.querySelectorAll('nav a');
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(a => {
+                        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-10% 0% -85% 0%',
+            threshold: 0
+        });
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+        rsvpToggle.addEventListener('click', () => {
+            if (rsvpFormWrap.hidden) {
+                if (!document.querySelector('script[src="https://tally.so/widgets/embed.js"]')) {
+                    const s = document.createElement('script');
+                    s.async = true;
+                    s.src = "https://tally.so/widgets/embed.js";
+                    document.body.appendChild(s);
+                }
+                if (!rsvpIframe.src) {
+                    rsvpIframe.src = "https://tally.so/embed/GxYJaL?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+                }
+                rsvpFormWrap.hidden = false;
+                rsvpToggle.textContent = 'Collapse';
+            } else {
+                rsvpFormWrap.hidden = true;
+                rsvpToggle.textContent = 'Open RSVP Form';
             }
         });
     </script>
