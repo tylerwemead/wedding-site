@@ -10,9 +10,9 @@
     <nav>
         <ul>
             <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#location">Location</a></li>
             <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#registry">Registry</a></li>
         </ul>
     </nav>
@@ -115,6 +115,98 @@
         </div>
     </section>
 
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <div class="rsvp-card" id="rsvp-form-wrap" hidden>
+            <iframe id="rsvp-iframe" loading="lazy" width="100%" height="1684" frameborder="0" marginheight="0" marginwidth="0" title="RSVP"></iframe>
+        </div>
+        <button class="rsvp-button" id="rsvp-toggle">Open RSVP Form</button>
+    </section>
+
+    <section id="location">
+        <h2>Location & Travel</h2>
+        <div class="location-subsection">
+            <div class="location-subsection-header" onclick="toggleSubsection(this)">
+                <h3>Accommodations</h3>
+                <div class="schedule-toggle">+</div>
+            </div>
+            <div class="accommodation-grid">
+                <div class="accommodation-card">
+                    <h4>Lake Crescent Lodge</h4>
+                    <p>Historic lodge on the lake!</p>
+                    <p><strong>Address:</strong>416 Lake Crescent Rd, Port Angeles, WA 98363<br>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Log Cabin Resort</h4>
+                    <p>Cabins and camping!</p>
+                    <p><strong>Address:</strong>3183 E Beach Rd, Olympic National Park, WA 98363<br>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Red Lion Hotel</h4>
+                    <p>Hotel in Port Angeles.</p>
+                    <p><strong>Address:</strong>221 N. Lincoln St, Port Angeles, WA 98362<br>
+                </div>
+                <div class="accommodation-card">
+                    <h4>Vacation Rentals</h4>
+                    <p>Airbnb and VRBO or w/e</p>
+                    <p><strong>Search Area:</strong> Port Angeles, WA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-subsection">
+            <div class="location-subsection-header" onclick="toggleSubsection(this)">
+                <h3>Dining & Shopping</h3>
+                <div class="schedule-toggle">+</div>
+            </div>
+            <div class="accommodation-grid">
+                <div class="recommendation-card">
+                    <h4>Restaurants</h4>
+                    <ul class="recommendation-list">
+                        <li>New Day Eatery (Our caterer!)</li>
+                        <li>Barhop Brewing</li>
+                        <li>Lake Crescent Lodge Dining Room</li>
+                        <li>Bella Italia (never been, but c'mon)</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Local Shops</h4>
+                    <ul class="recommendation-list">
+                        <li>Joyce General Store</li>
+                        <li>Swain's General Store (Yeah, it's a hardware store, but it's a staple!)</li>
+                        <li>Port Book and News</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-subsection">
+            <div class="location-subsection-header" onclick="toggleSubsection(this)">
+                <h3>Activities</h3>
+                <div class="schedule-toggle">+</div>
+            </div>
+            <div class="accommodation-grid">
+                <div class="recommendation-card">
+                    <h4>Hiking Trails</h4>
+                    <ul class="recommendation-list">
+                        <li>Marymere Falls Trail</li>
+                        <li>Hurricane Ridge</li>
+                        <li>Spruce Railroad Trail</li>
+                        <li>Cape Alava</li>
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Points of Interest</h4>
+                    <ul class="recommendation-list">
+                        <li>Crescent Beach</li>
+                        <li>Elwha River Valley</li>
+                        <li>Port Angeles Waterfront</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-row">
@@ -144,92 +236,10 @@
                 <img src="imgs/col-4/dock-shots.jpg">
             </div>
         </div>
-    </section>
-
-    <section id="location">
-        <h2>Location & Travel</h2>
-        <div class="location-subsection">
-            <h3>Accommodations</h3>
-            <div class="accommodation-grid">
-                <div class="accommodation-card">
-                    <h4>Lake Crescent Lodge</h4>
-                    <p>Historic lodge on the lake!</p>
-                    <p><strong>Address:</strong> Whoops<br>
-                        <strong>Phone:</strong> Whoops</p>
-                </div>
-                <div class="accommodation-card">
-                    <h4>Log Cabin Resort</h4>
-                    <p>Cabins and camping!</p>
-                    <p><strong>Address:</strong> Whoops<br>
-                        <strong>Phone:</strong> Whoops</p>
-                </div>
-                <div class="accommodation-card">
-                    <h4>Red Lion Hotel</h4>
-                    <p>Hotel in Port Angeles.</p>
-                    <p><strong>Address:</strong> Whoops<br>
-                        <strong>Phone:</strong> Whoops</p>
-                </div>
-                <div class="accommodation-card">
-                    <h4>Vacation Rentals</h4>
-                    <p>Airbnb and VRBO or w/e</p>
-                    <p><strong>Search Area:</strong> Port Angeles, WA</p>
-                </div>
-            </div>
+        <div class="gallery-controls">
+            <button class="gallery-arrow" id="gallery-prev" aria-label="Previous photos">&#9664;</button>
+            <button class="gallery-arrow" id="gallery-next" aria-label="Next photos">&#9654;</button>
         </div>
-
-        <div class="location-subsection">
-            <h3>Dining & Shopping</h3>
-            <div class="accommodation-grid">
-                <div class="recommendation-card">
-                    <h4>Restaurants</h4>
-                    <ul class="recommendation-list">
-                        <li>New Day Eatery (Our caterer!)</li>
-                        <li>Barhop Brewing</li>
-                        <li>Lake Crescent Lodge Dining Room</li>
-                        <li>Bella Italia (never been, but c'mon)</li>
-                    </ul>
-                </div>
-                <div class="recommendation-card">
-                    <h4>Local Shops</h4>
-                    <ul class="recommendation-list">
-                        <li>Joyce General Store</li>
-                        <li>Swain's General Store (Yeah, it's a hardware store, but it's a staple!)</li>
-                        <li>Port Book and News</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="location-subsection">
-            <h3>Area Activities</h3>
-            <div class="accommodation-grid">
-                <div class="recommendation-card">
-                    <h4>Hiking Trails</h4>
-                    <ul class="recommendation-list">
-                        <li>Marymere Falls Trail</li>
-                        <li>Hurricane Ridge</li>
-                        <li>Spruce Railroad Trail</li>
-                        <li>Cape Alava</li>
-                    </ul>
-                </div>
-                <div class="recommendation-card">
-                    <h4>Points of Interest</h4>
-                    <ul class="recommendation-list">
-                        <li>Crescent Beach</li>
-                        <li>Elwha River Valley</li>
-                        <li>Port Angeles Waterfront</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="rsvp">
-        <h2>RSVP</h2>
-        <div class="rsvp-card" id="rsvp-form-wrap" hidden>
-            <iframe id="rsvp-iframe" loading="lazy" width="100%" height="1684" frameborder="0" marginheight="0" marginwidth="0" title="RSVP"></iframe>
-        </div>
-        <button class="rsvp-button" id="rsvp-toggle">Open RSVP Form</button>
     </section>
 
     <section id="registry">
@@ -303,6 +313,11 @@
             }
         }
 
+        function toggleSubsection(header) {
+            if (window.innerWidth > 968) return;
+            header.parentElement.classList.toggle('expanded');
+        }
+
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = lightbox.querySelector('img');
 
@@ -327,6 +342,18 @@
             }
         });
 
+        const galleryRow = document.querySelector('.gallery-row');
+        const galleryPrev = document.getElementById('gallery-prev');
+        const galleryNext = document.getElementById('gallery-next');
+        if (galleryPrev && galleryNext && galleryRow) {
+            galleryPrev.addEventListener('click', () => {
+                galleryRow.scrollBy({ left: -galleryRow.clientWidth * 0.85, behavior: 'smooth' });
+            });
+            galleryNext.addEventListener('click', () => {
+                galleryRow.scrollBy({ left: galleryRow.clientWidth * 0.85, behavior: 'smooth' });
+            });
+        }
+
         const rsvpToggle = document.getElementById('rsvp-toggle');
         const rsvpFormWrap = document.getElementById('rsvp-form-wrap');
         const rsvpIframe = document.getElementById('rsvp-iframe');
@@ -337,7 +364,11 @@
                 if (entry.isIntersecting) {
                     const id = entry.target.id;
                     navLinks.forEach(a => {
-                        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+                        const isActive = a.getAttribute('href') === '#' + id;
+                        a.classList.toggle('active', isActive);
+                        if (isActive) {
+                            a.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
                     });
                 }
             });
